@@ -154,8 +154,18 @@ def get_id_from_path(path):
 
 
 def labels_to_vector(labels, mapping):
+    print("Labels")
+    print(labels)
+    print("Mapping")
+    print(mapping)
     vec = [0] * len(mapping)
+    print("Vec")
+    print(vec);
     for i in labels:
+        print("mapping[i]")
+        print(mapping[i])
+        print("vec[mapping[i]]")
+        print(vec[mapping[i]])
         vec[mapping[i]] = 1
     return vec
 

@@ -149,11 +149,6 @@ def load(filepath):
 
 def get_id_from_path(path):
     base_name = os.path.basename(path)
-
-    return base_name.replace(".mp3", "").replace(".npy", "")
-
-def get_id_from_path2(path):
-    base_name = os.path.basename(path)
     base_name_2 = ""
 
     if "_" in base_name:

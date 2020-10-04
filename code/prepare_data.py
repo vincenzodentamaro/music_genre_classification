@@ -149,15 +149,23 @@ def load(filepath):
 
 def get_id_from_path(path):
     base_name = os.path.basename(path)
+
+    return base_name.replace(".mp3", "").replace(".npy", "")
+
+def get_key_from_path(path):
+    base_name = os.path.basename(path)
     base_name_2 = ""
+    
+    base_name = base_name.replace(".wav", "")
+    base_name = base_name.replace(".npy", "")
 
     if "_" in base_name:
         base_name_arr = base_name.split("_")
         base_name_2 = base_name_arr[0]
-        print(base_name_2)
+    else:
+      base_name_2 = base_name
 
     return base_name_2
-
 
 def labels_to_vector(labels, mapping):
     vec = [0] * len(mapping)

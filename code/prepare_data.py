@@ -157,7 +157,7 @@ def get_key_from_path(path):
     base_name_2 = ""
     
     base_name = base_name.replace(".wav", "")
-    base_name = base_name.replace(".npy", "")
+    base_name = base_name.replace(".npy", "") 
 
     if "_" in base_name:
         base_name_arr = base_name.split("_")

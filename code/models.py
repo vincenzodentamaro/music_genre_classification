@@ -43,7 +43,7 @@ def transformer_classifier(
     num_heads=8,
     dff=256,
     maximum_position_encoding=2048,
-    n_classes=16,
+    n_classes=2,
 ):
     inp = Input((None, d_model))
 

@@ -22,7 +22,7 @@ def pre_process_audio_mel_t(audio, sample_rate=16000):
 
 def load_audio_file(file_path, input_length=input_length):
     try:
-        data = librosa.core.load(file_path, sr=16000)[0]  # , sr=16000
+        data = librosa.core.load(file_path, sr=16000, duration=5.0)[0]  # , sr=16000
     except ZeroDivisionError:
         data = []
 

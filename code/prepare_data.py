@@ -43,11 +43,6 @@ class DataGenerator(Sequence):
     def __data_generation(self, batch_samples):
         paths, labels = zip(*batch_samples)
 
-        labels = [labels_to_vector(x, self.class_mapping) for x in labels]
-        print(labels)
-        labels = labels
-        print(labels)
-
         crop_size = np.random.randint(128, 256)
 
         X = np.array([random_crop(np.load(x), crop_size=crop_size) for x in paths])

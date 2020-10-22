@@ -169,8 +169,7 @@ def get_key_from_path(path):
 
 def labels_to_vector(labels, mapping):
     vec = [0] * len(mapping)
-    for i in labels:
-        vec[mapping[i]] = 1
+    vec[mapping[labels]] = 1
     return vec
 
 

@@ -17,7 +17,7 @@ from audio_processing import random_crop, random_mask
 
 
 class DataGenerator(Sequence):
-    def __init__(self, path_x_label_list, class_mapping, batch_size=32):
+    def __init__(self, path_x_label_list, class_mapping, batch_size):
         self.path_x_label_list = path_x_label_list
 
         self.batch_size = batch_size
@@ -44,6 +44,9 @@ class DataGenerator(Sequence):
         paths, labels = zip(*batch_samples)
 
         labels = [labels_to_vector(x, self.class_mapping) for x in labels]
+        print(labels)
+        labels = labels
+        print(labels)
 
         crop_size = np.random.randint(128, 256)
 

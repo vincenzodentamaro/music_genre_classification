@@ -70,39 +70,5 @@ def random_mask(data):
 
 def save(path):
     data = load_audio_file(path)
-    np.save(path.replace(".mp3", ".npy"), data)
+    np.save(path.replace(".wav", ".npy"), data)
     return True
-
-
-if __name__ == "__main__":
-    import matplotlib.pyplot as plt
-    from tqdm import tqdm
-    from glob import glob
-    from multiprocessing import Pool
-
-    base_path = "/media/ml/data_ml/fma_large"
-    files = sorted(list(glob(base_path + "/*/*.mp3")))
-
-    print(len(files))
-
-    p = Pool(8)
-
-    for i, _ in tqdm(enumerate(p.imap(save, files))):
-        if i % 1000 == 0:
-            print(i)
-
-    # data = load_audio_file("/media/ml/data_ml/fma_medium/008/008081.mp3", input_length=16000 * 30)
-    #
-    # print(data.shape)
-    #
-    # new_data =random_mask(data)
-    #
-    # plt.figure()
-    # plt.imshow(data.T)
-    # plt.show()
-    #
-    # plt.figure()
-    # plt.imshow(new_data.T)
-    # plt.show()
-    #
-    # print(np.min(data), np.max(data))
